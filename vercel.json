@@ -2,7 +2,7 @@
   "version": 2,
   "name": "papitaGram",
   "builds": [
-    { "use": "@vercel/static-build", "src": "package.json"}
+    { "use": "@vercel/node", "src": "index.js"}
   ],
   "routes": [
     {

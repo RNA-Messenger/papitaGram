@@ -1,27 +1,27 @@
 {
-  "name": "papitaGram",
+  "name": "petPals",
   "version": "1.0.0",
   "description": "Una app para compartir fotos de papitas",
   "main": "index.js",
   "scripts": {
-    "vercel-build": "npm run build",
+    "now-build": "npm run build",
     "build": "webpack",
     "lint": "standard",
     "lint-fix": "standard --fix",
-    "dev": "webpack-dev-server --open",
+    "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RNA-Messenger/papitaGram.git"
+    "url": "git+https://github.com/RNA-Messenger/petPals.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RNA-Messenger/papitaGram/issues"
+    "url": "https://github.com/RNA-Messenger/petPals/issues"
   },
-  "homepage": "https://github.com/RNA-Messenger/papitaGram.git#readme",
+  "homepage": "https://github.com/RNA-Messenger/petPals.git#readme",
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
@@ -34,8 +34,15 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
+    "apollo-boost": "^0.4.9",
+    "graphql": "^15.8.0",
+    "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5"
   },
   "standard": {
     "ignore": [
@@ -43,6 +50,8 @@
     ]
   },
   "eslintConfig": {
-    "extends":["./node_modules/standard/eslintrc.json"]
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
   }
 }

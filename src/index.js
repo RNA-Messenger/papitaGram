@@ -1,4 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-ReactDOM.render(<h1>Papita for the win</h1>, document.getElementById('app'))
+import { App } from "./App";
+
+const client = new ApolloClient({
+  uri: "https://papitaGram-api.vercel.app/graphql",
+  cache: new InMemoryCache(),
+});
+
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById("app")
+);
