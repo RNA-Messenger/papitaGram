@@ -1,4 +1,4 @@
-##petPals
+## petPals
 
 ### Showcase your love animals... 
 
