@@ -5,11 +5,11 @@ import { ListOfCategories } from "../components/ListOfCategories/index";
 import { ListOfPhotoCards } from "../container/ListOfPhotoCards";
 
 export const Home = () => {
-  const { id } = useParams();
+  const { categoryId } = useParams();
   return (
     <>
       <ListOfCategories />
-      <ListOfPhotoCards categoryId={id} />
+      <ListOfPhotoCards categoryId={categoryId} />
     </>
   );
 };

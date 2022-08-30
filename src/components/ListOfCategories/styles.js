@@ -13,20 +13,26 @@ export const List = styled.ul`
     props.fixed &&
     css`
        {
-        background: #fff;
-        border-radius: 100px;
-        box-shadow: 0 0 20 rgba(0, 0, 0, 0.3);
         left: 0;
         right: 0;
         top: -4px;
+        /* justify-content: space-around; */
         margin: 0 auto;
-        width: 86vw;
-        max-width: 600px;
+        width: 100vw;
+        max-width: 500px;
         padding: 10px;
         position: fixed;
-        transform: scale(0.7);
         z-index: 1;
         ${fadeIn("0.5")};
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        li {
+          transform: scale(0.75);
+          padding: 0;
+        }
       }
     `}
 `;

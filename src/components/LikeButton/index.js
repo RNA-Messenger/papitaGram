@@ -3,8 +3,9 @@ import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 
 import { Button } from "./styles";
 
-export const LikeButton = ({ liked, likes, onClick }) => {
-  const LikeIcon = liked ? MdFavorite : MdFavoriteBorder;
+export const LikeButton = ({ favs, liked, likes, onClick }) => {
+  const LikeIcon = liked || favs ? MdFavorite : MdFavoriteBorder;
+  console.log(favs);
   return (
     <Button onClick={onClick}>
       <LikeIcon size="32px" />
