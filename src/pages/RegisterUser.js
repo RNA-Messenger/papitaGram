@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { UserForm } from "../components/UserForm";
@@ -7,20 +7,16 @@ import { useRegisterNewUser } from "../lib/graphql/mutations/useRegisterNewUser"
 
 export const RegisterUser = () => {
   const { activateAuth } = useContext(AppContext);
+  const navigate = useNavigate();
   const [registerUserMutation, { data, loading, error }] = useRegisterNewUser();
-  const navigateTo = useNavigate();
-
   const registerUserOnSubmit = ({ email, password }) => {
     const input = { email, password };
     const variables = { input };
     registerUserMutation({ variables }).then(({ data }) => {
       const { signup } = data;
       activateAuth(signup);
+      navigate("/user");
     });
-
-    // if (!error) {
-    //   activateAuth.then(navigateTo("/user"));
-    // }
   };
   const errorMsg =
     error &&

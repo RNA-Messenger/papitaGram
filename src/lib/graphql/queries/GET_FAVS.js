@@ -26,8 +26,8 @@ const GET_FAVS = gql`
 `;
 
 export const useGetFavPhotos = () => {
-  const { loading, data, error } = useQuery(GET_FAVS, {
+  const { loading, data, error, refetch } = useQuery(GET_FAVS, {
     fetchPolicy: "cache-and-network",
   });
-  return { loading, data, error };
+  return { loading, data, error, refetch };
 };

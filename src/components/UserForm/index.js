@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { FormTitle, Form, Input, Submit, Error } from "./styles";
-
+import { FormTitle, Form, Input, Error } from "./styles";
+import { SubmitButton } from "../SubmitButton";
 import { useInputValue } from "../../hooks/useInputValue";
 
 export const UserForm = ({ formTitle, onSubmit, disabled, error }) => {
@@ -12,7 +12,7 @@ export const UserForm = ({ formTitle, onSubmit, disabled, error }) => {
   const BottomText = () =>
     location.pathname === "/register" ? (
       <p>
-        ¿Ya tienes cuenta? <Link to="/user">Inicia Sesión.</Link>
+        ¿Ya tienes cuenta? <Link to="/user">Inicia Sesión</Link>
       </p>
     ) : (
       <p>
@@ -44,10 +44,7 @@ export const UserForm = ({ formTitle, onSubmit, disabled, error }) => {
           name="password"
           {...password}
         />
-
-        <Submit type="submit" disabled={disabled}>
-          {formTitle}
-        </Submit>
+        <SubmitButton disable={disabled}>{formTitle}</SubmitButton>
       </Form>
       <BottomText />
     </>

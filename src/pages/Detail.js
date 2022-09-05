@@ -2,8 +2,14 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 import { PhotoCardDetail } from "../container/PhotoCardDetail";
+import { Layout } from "../components/Layout";
 
-export const Detail = () => {
+export default () => {
   const { detailId } = useParams();
-  return <PhotoCardDetail id={detailId} />;
+  return (
+    <>
+      <Layout title={`Foto ${detailId}`} />
+      <PhotoCardDetail id={detailId} />
+    </>
+  );
 };

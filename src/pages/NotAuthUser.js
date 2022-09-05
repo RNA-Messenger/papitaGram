@@ -7,8 +7,8 @@ import { useLogInUser } from "../lib/graphql/mutations/useLogInUser";
 
 export const NotAuthUser = () => {
   const { activateAuth } = useContext(AppContext);
+  const navigate = useNavigate();
   const [logInUserMutation, { data, loading, error }] = useLogInUser();
-  const navigateTo = useNavigate();
 
   const logInUserOnSubmit = ({ email, password }) => {
     const input = { email, password };
@@ -16,12 +16,8 @@ export const NotAuthUser = () => {
     logInUserMutation({ variables }).then(({ data }) => {
       const { login } = data;
       activateAuth(login);
+      navigate("/user");
     });
-    // console.log(error);
-
-    // if (!error) {
-    //   activateAuth.then(navigateTo("/user"));
-    // }
   };
   const errorMsg =
     error && "Oops! Hemos encontrado un error al intentar loguearte.";

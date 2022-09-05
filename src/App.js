@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
 import { GlobalStyles } from "./styles/GlobalStyles";
 

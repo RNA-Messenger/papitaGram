@@ -15,7 +15,8 @@ export const ListOfCategories = () => {
     document.addEventListener("scroll", onScroll);
     return () => document.removeEventListener("scroll", onScroll);
   }, [showFixed]);
-
+  console.log(categories);
+  console.log("papitas");
   const renderList = (fixed) => (
     <List fixed={fixed}>
       {loading ? (

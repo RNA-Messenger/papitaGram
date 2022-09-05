@@ -4,16 +4,21 @@ const AppContext = createContext(null);
 
 const AppProvider = (props) => {
   const [isAuth, setAuth] = useState(() => {
-    return window.sessionStorage.getItem("token");
+    return localStorage.getItem("token");
   });
 
   const activateAuth = (token) => {
-    window.sessionStorage.setItem("token", token);
+    localStorage.setItem("token", token);
     setAuth(true);
   };
 
+  const removeAuth = () => {
+    localStorage.removeItem("token");
+    setAuth(false);
+  };
+
   return (
-    <AppContext.Provider value={{ isAuth, activateAuth }}>
+    <AppContext.Provider value={{ isAuth, activateAuth, removeAuth }}>
       {props.children}
     </AppContext.Provider>
   );

@@ -15,6 +15,7 @@ export const PhotoCard = ({
   src = DEFAULT_IMAGE,
   alt = "no image alt",
   favs = false,
+  refetch,
 }) => {
   const [isShowing, ref] = useNearScreen();
   const { likeMutation } = useMutationToggleLike();
@@ -23,10 +24,9 @@ export const PhotoCard = ({
       variables: {
         input: { id },
       },
-    });
+    }).then(() => refetch && refetch());
     favs = false;
   };
-  console.log(favs);
   return (
     <PostArticle ref={ref}>
       {isShowing && (

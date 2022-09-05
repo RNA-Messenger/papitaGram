@@ -9,7 +9,5 @@ const REGISTER_NEW_USER = gql`
 export const useRegisterNewUser = () => {
   const [registerUserMutation, { data, loading, error }] =
     useMutation(REGISTER_NEW_USER);
-  console.log(data);
-  console.log(error);
   return [registerUserMutation, { data, loading, error }];
 };
