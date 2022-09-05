@@ -9,8 +9,21 @@
 <body>
     <div id="app"></div>
     <noscript>
-        <h3> TU navegador no esta utilizando Js</h3>
+        <h3> Tu navegador es una papita y no esta utilizando Js</h3>
         <p> Esta app necesita javascript para funcionar</p>
     </noscript>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+            navigator.serviceWorker?.register('./service-worker.js')
+            .then(reg  => {
+                console.log('registered', reg)
+                const sw = reg.installing || reg.waiting || reg.active
+                sw.postMessage({ milliseconds: Date.now() })
+            })
+            .catch(() => console.error('registration failed'))
+            })
+            }
+    </script>
 </body>
 </html>
