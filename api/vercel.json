@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "papitaGram-server",
-  "alias": ["papitaGram-api"],
+  "alias": ["petPals-api"],
   "builds": [{ "src": "index.js", "use": "@vercel/node" }],
   "routes": [{
     "headers": {
