@@ -1,3 +1,3 @@
 import React from "react";
 
-export default () => <h2> Esta pagina no existe </h2>;
+export const NotFound = () => <h2> Esta pagina no existe </h2>;

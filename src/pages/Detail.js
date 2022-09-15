@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { PhotoCardDetail } from "../container/PhotoCardDetail";
 import { Layout } from "../components/Layout";
 
-export default () => {
+export const Detail = () => {
   const { detailId } = useParams();
   return (
     <>

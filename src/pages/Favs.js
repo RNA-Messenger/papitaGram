@@ -5,7 +5,7 @@ import { useGetFavPhotos } from "../lib/graphql/queries/GET_FAVS";
 import { ListOfFavs } from "../components/ListFavorites";
 import { Layout } from "../components/Layout";
 
-export default () => {
+export const Favs = () => {
   const { loading, data, error, refetch } = useGetFavPhotos();
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error.. </p>;
