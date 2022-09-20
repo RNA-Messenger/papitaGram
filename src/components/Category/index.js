@@ -6,9 +6,11 @@ export const Category = ({
   cover = DEFAULT_IMAGE,
   path = "/",
   emoji = "...",
-}) => (
-  <CategoryLink to={path}>
-    <Image src={cover} />
-    {emoji}
-  </CategoryLink>
-);
+}) => {
+  return (
+    <CategoryLink to={path}>
+      <Image src={cover} />
+      {emoji}
+    </CategoryLink>
+  );
+};
