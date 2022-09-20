@@ -1,4 +1,4 @@
-## petPals
+## papitaGram aka petPals
 ![image](https://user-images.githubusercontent.com/54856927/191184904-36adc1db-5074-4e39-a1b5-bd180e187ce3.png)
 
 ### Showcase your love animals... 
