@@ -1,6 +1,7 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { graphql } from "@apollo/client/react/hoc";
 
-export const LIST_PHOTO_CARDS = gql`
+export const LIST_PHOTO_CARDS = graphql(gql`
   query getPhotos($categoryId: ID) {
     photos(categoryId: $categoryId) {
       id
@@ -11,11 +12,4 @@ export const LIST_PHOTO_CARDS = gql`
       liked
     }
   }
-`;
-
-export const useGetListOfPhotos = (id) => {
-  const { loading, data, error, refetch } = useQuery(LIST_PHOTO_CARDS, {
-    variables: { id },
-  });
-  return { loading, data, error, refetch };
-};
+`);
