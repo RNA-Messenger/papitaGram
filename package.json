@@ -1,7 +1,7 @@
 {
   "name": "petPals",
   "version": "1.0.0",
-  "description": "Una app para compartir fotos de papitas",
+  "description": "Una app para compartir fotos de mascotas",
   "main": "index.js",
   "scripts": {
     "now-build": "npm run build",
